@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Redirect } from "react-router-dom";
 
-import { NewsList } from "../../components";
+import { Header, NewsList } from "../../components";
 import { fetchNewsFromCategory } from "../../utils/api";
-import { capitalize } from "../../utils/strings";
-import categories from "../../data/categories.json";
+import categories from "../../data/categories";
 
 const Wrapper = styled.div`
   padding: 0 18px;
@@ -17,21 +16,23 @@ export default function Category({ match }) {
   );
 
   return (
-    <Wrapper>
-      {selectedCategory ? (
-        <>
-          <h1>{capitalize(match.params.category)}</h1>
-          <NewsList
-            loadNews={() =>
-              fetchNewsFromCategory({
-                category: match.params.category
-              })
-            }
-          />
-        </>
-      ) : (
-        <Redirect to="/" />
-      )}
-    </Wrapper>
+    <>
+      <Header category={selectedCategory} />
+      <Wrapper className="animated fadeInUp">
+        {selectedCategory ? (
+          <>
+            <NewsList
+              loadNews={() =>
+                fetchNewsFromCategory({
+                  category: match.params.category
+                })
+              }
+            />
+          </>
+        ) : (
+          <Redirect to="/" />
+        )}
+      </Wrapper>
+    </>
   );
 }
