@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 import { capitalize } from "../../utils/strings";
+import { ReactComponent as AngleRightIcon } from "./angle-right-icon.svg";
 
 const Wrapper = styled.header`
   padding: 32px 18px;
@@ -19,30 +20,34 @@ const Wrapper = styled.header`
       color: white;
       background-color: ${category.backgroundColor};
     `}
-`;
 
-const Title = styled.h1`
-  margin: 0;
-  display: inline-block;
-  margin-right: 8px;
-`;
+  h1 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
 
-const CategoryTitle = styled.h2`
-  margin: 0;
-  display: inline-block;
+  svg {
+    width: 10px;
+    margin: 6px 14px 0;
+    opacity: 0.6;
+  }
 `;
 
 export default function Header({ category }) {
   return (
     <Wrapper category={category}>
-      <Link to="/">
-        <Title>News</Title>
-      </Link>
-      {category && (
-        <Link to={`/category/${category.title}`}>
-          <CategoryTitle>- {capitalize(category.title)}</CategoryTitle>
-        </Link>
-      )}
+      <h1>
+        <Link to="/">News</Link>
+        {category && (
+          <>
+            <AngleRightIcon />
+            <Link to={`/category/${category.title}`}>
+              {capitalize(category.title)}
+            </Link>
+          </>
+        )}
+      </h1>
     </Wrapper>
   );
 }
