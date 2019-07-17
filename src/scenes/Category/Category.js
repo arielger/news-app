@@ -8,6 +8,10 @@ import categories from "../../data/categories";
 
 const Wrapper = styled.div`
   padding: 0 18px;
+
+  @media (min-width: 768px) {
+    padding: 0 32px;
+  }
 `;
 
 export default function Category({ match }) {

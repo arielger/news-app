@@ -9,6 +9,10 @@ const Wrapper = styled.header`
   padding: 32px 18px;
   margin-bottom: 32px;
 
+  @media (min-width: 768px) {
+    padding: 32px;
+  }
+
   a {
     text-decoration: none;
     color: currentColor;

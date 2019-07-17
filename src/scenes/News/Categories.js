@@ -11,6 +11,11 @@ const CategoriesList = styled.div`
   overflow: scroll;
   padding: 0 18px 20px;
   margin: 0 -18px;
+
+  @media (min-width: 768px) {
+    padding: 0 32px 20px;
+    margin: 0 -32px;
+  }
 `;
 
 const Category = styled(Link)`
