@@ -6,11 +6,11 @@ import { capitalize } from "../../utils/strings";
 import { ReactComponent as AngleRightIcon } from "./angle-right-icon.svg";
 
 const Wrapper = styled.header`
-  padding: 32px 18px;
-  margin-bottom: 32px;
+  padding: 20px 18px;
+  margin-bottom: 24px;
 
   @media (min-width: 768px) {
-    padding: 32px;
+    padding: 20px 32px;
   }
 
   a {
