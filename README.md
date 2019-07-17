@@ -2,6 +2,12 @@
 
 Sample app to view the latest news from [News API](https://newsapi.org/).
 
+
+<p align="center">
+<img width="220" src="https://user-images.githubusercontent.com/6318057/61349497-b6cd7b00-a83a-11e9-917b-73ed1282bdb6.png">
+  </p>
+
+
 ## Development
 
 Before running the following commands run `yarn install` to install all the required dependencies.
