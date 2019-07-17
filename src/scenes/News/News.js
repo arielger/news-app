@@ -9,15 +9,11 @@ const Wrapper = styled.div`
   padding: 0 18px;
 `;
 
-export default function News({ animationState }) {
+export default function News({}) {
   return (
     <>
       <Header />
-      <Wrapper
-        className={`animated ${
-          animationState === "exiting" ? "fadeOutDown" : ""
-        }`}
-      >
+      <Wrapper>
         <div>
           <h2>Categories</h2>
           <Categories />

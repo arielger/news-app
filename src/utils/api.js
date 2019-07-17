@@ -9,7 +9,7 @@ const fetchTopHeadlines = ({ country = "us" } = {}) => {
 };
 
 const fetchNewsFromCategory = ({ country = "us", category } = {}) => {
-  const url = `${NEWS_API_URL}/top-headlines?country=${country}&category=${category}&apiKey=${
+  const url = `${NEWS_API_URL}/top-headlines?category=${category}&country=${country}&apiKey=${
     process.env.REACT_APP_NEWS_API_KEY
   }`;
 

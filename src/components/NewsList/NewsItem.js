@@ -130,7 +130,10 @@ export default function NewsItem({
   const [isBookmark, setIsBookmark] = useState(false);
 
   return (
-    <ArticleWrapper key={url}>
+    <ArticleWrapper
+      key={url}
+      {...!isPlaceholder && { "data-testid": "news-item" }}
+    >
       {isPlaceholder ? (
         <>
           <div className="article-image" />
